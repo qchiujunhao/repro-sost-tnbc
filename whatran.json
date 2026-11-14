@@ -1,0 +1,42 @@
+{
+  "method": {
+    "title": "SOST in TNBC: reproduction",
+    "question": "Do the two figures and the reported statistics in YangX-BIDD/TNBC (Zenodo 10.5281/zenodo.18752090) regenerate from the deposited code and data?",
+    "findings": [
+      "Figure 2 reproduces: Pearson r = 0.571 over 798 pooled TNBC samples, as the README states",
+      "Figure 1 regenerates as deposited, but no deposited script produces the README's Q3 cutoff of 51.80 or its positivity rates of 25, 9.6 and 82.8 percent"
+    ]
+  },
+  "inputs": [],
+  "run": "bash run.sh",
+  "results_dir": "figures",
+  "steps": [
+    {
+      "id": "run-figure1-hscore-distribution-py-1",
+      "title": "Run figure1_hscore_distribution.py",
+      "script": "scripts/figure1_hscore_distribution.py",
+      "produces": [
+        "figures/figure1_hscore_distribution.png"
+      ]
+    },
+    {
+      "id": "run-figure2-sost-mki67-correlation-py-1",
+      "title": "Run figure2_sost_mki67_correlation.py",
+      "script": "scripts/figure2_sost_mki67_correlation.py",
+      "produces": [
+        "figures/figure2_sost_mki67_correlation.png"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "figure1_hscore_distribution.png",
+      "compare": "exists"
+    },
+    {
+      "path": "figure2_sost_mki67_correlation.png",
+      "compare": "exists"
+    }
+  ],
+  "generated": "whatran 0.4.0 848c8031a7b8"
+}

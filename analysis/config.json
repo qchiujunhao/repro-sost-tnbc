@@ -1,0 +1,35 @@
+{
+  "format": "analysis-graph/0.1",
+  "project": {
+    "name": "SOST in TNBC: reproduction",
+    "description": "Do the two figures and the reported statistics in YangX-BIDD/TNBC (Zenodo 10.5281/zenodo.18752090) regenerate from the deposited code and data?"
+  },
+  "watch": [
+    "."
+  ],
+  "exclude": [
+    ".git",
+    ".hg",
+    ".svn",
+    "node_modules",
+    ".venv",
+    "venv",
+    "env",
+    "__pycache__",
+    ".ipynb_checkpoints",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".tox",
+    ".DS_Store",
+    "site",
+    ".cache"
+  ],
+  "observe": {
+    "enabled": true
+  },
+  "style": {
+    "enabled": true,
+    "verbs": []
+  }
+}
