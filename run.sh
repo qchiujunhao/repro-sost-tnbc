@@ -7,9 +7,11 @@ set -euo pipefail
 cd "$(dirname "$0")"
 mkdir -p figures
 
-# Environment (edit as needed), for example:
-#   python3 -m venv .venv && .venv/bin/pip install -q -r requirements.txt
-#   then run the steps with .venv/bin/python
+# Environment
+if [ ! -x .venv/bin/python ]; then
+  python3 -m venv .venv
+  .venv/bin/pip install -q pandas numpy scipy matplotlib openpyxl
+fi
 
 # 01 Run figure1_hscore_distribution.py  (run-run-figure1-hscore-distribution-py-1)
 ( cd scripts && ../.venv/bin/python figure1_hscore_distribution.py )
