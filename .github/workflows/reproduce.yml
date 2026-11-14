@@ -31,7 +31,7 @@ jobs:
 
       - name: Move reference outputs aside
         # Remove the committed answer from the package before re-running.
-        run: mv results "$RUNNER_TEMP/reference-outputs"
+        run: mv figures "$RUNNER_TEMP/reference-outputs"
 
       - name: Reconstruct environment and re-run from raw inputs
         # run.sh owns dependency installation as well as the ordered analysis
@@ -39,7 +39,7 @@ jobs:
         run: bash run.sh
 
       - name: Compare regenerated outputs against reference
-        run: python3 check.py results "$RUNNER_TEMP/reference-outputs"
+        run: python3 check.py figures "$RUNNER_TEMP/reference-outputs"
 
       - name: Build showcase site
         # build_site.py is the package's own analysis-specific showcase builder
